@@ -1,0 +1,9 @@
+exp_muere_euler.png soluciones_euler.png: ./euler* ./muere* plot_ode.py
+	python plot_ode.py
+./euler* ./muere*: ode.x
+	./ode.x
+ode.x: ode_1.cpp
+	g++ ode_1.cpp -o ode.x
+
+clean:
+	rm ./euler* ./muere* ode.x
